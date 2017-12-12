@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Afisare_persoane
+{
+    class Program
+    {
+        static string afisare2(string nume, string prenume, int varsta)
+        {
+            string x = 
+             string.Format(nume + prenume + varsta);
+            return x;
+        }
+
+        static void Main(string[] args)
+        {
+            Func<string, string,int, string> afisare = afisare2;
+
+            string result = afisare("Ionut ","Matei ",43);
+
+            Console.WriteLine(result);
+        }
+    }
+}
