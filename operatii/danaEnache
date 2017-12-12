@@ -1,0 +1,30 @@
+public delegate double op();
+    class Program
+    {
+        public double x = 0.34;
+        public double y = 4.62;
+        public void Operatie(op functie)
+        {
+            Console.WriteLine(functie());
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+            op plus =
+                () => { return p.x + p.y; };
+            op minus =
+                () => { return p.x - p.y; };
+            op inmultit =
+                () => { return p.x * p.y; };
+            op impartit =
+                () => { return p.x / p.y; };
+            Console.Write("{0} + {1}", p.x, p.y + " = ");
+            p.Operatie(plus);
+            Console.Write("{0} - {1}", p.x, p.y + " = ");
+            p.Operatie(minus);
+            Console.Write("{0} * {1}", p.x, p.y + " = ");
+            p.Operatie(inmultit);
+            Console.Write("{0} / {1}", p.x, p.y + " = ");
+            p.Operatie(impartit);
+        }
+    }
