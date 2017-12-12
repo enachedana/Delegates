@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharp_saipem19_Person
+{
+
+    public class Person
+    {
+        public string Name;
+        public string FirstName;
+        public int Age;
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person [] pers = new Person[2]; //person array                                    
+            
+            pers[0] = new Person();
+            pers[1] = new Person();
+
+            pers[0].Name = "Barbu";
+            pers[0].FirstName = "Ion";
+            pers[0].Age = 19;
+            pers[1].Name = "Manolache";
+            pers[1].FirstName = "Andrei";
+            pers[1].Age = 21;
+
+            Console.WriteLine("There are two person.");
+            Console.WriteLine("Enter 1 for format(Name, FirstName and Age)");
+            Console.WriteLine("Enter 2 for format(FirstName, Name, Age)");
+            Console.WriteLine("Enter 3 for format(Age, Name, FirstName)");
+
+
+            for (int i = 0; i < pers.Length; i++)
+            {
+                int n = int.Parse(Console.ReadLine());
+
+                if (n == 1)
+                {
+                    Console.WriteLine(String.Format("Name is: {0} and FirsName is: {1} and Age is: {2}", pers[i].Name, pers[i].FirstName, pers[i].Age));
+                }
+
+                if (n == 2)
+                {
+                    Console.WriteLine(String.Format("FirstName is: {0} and Name is: {1} and Age is: {2}", pers[i].FirstName, pers[i].Name, pers[i].Age));
+                }
+
+                if (n == 3)
+                {
+                    Console.WriteLine(String.Format("Age is: {0} and Name is: {1} and FirstName is: {2}", pers[i].Age, pers[i].Name, pers[i].FirstName));
+                }
+            }
+        }
+    }
+}
+
