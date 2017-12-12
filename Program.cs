@@ -12,10 +12,7 @@ namespace csharp_saipem_20_persoana_delegate_display
         public string Prenume { get; set; }
         public int Varsta { get; set; }
 
-        public string FormatString (Func<Persoana, string> function)
-        {
-            return function(this);
-        }
+
     }
 
 
@@ -58,24 +55,6 @@ namespace csharp_saipem_20_persoana_delegate_display
                 }
             };
 
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item.FormatString(
-                    x =>
-                    {
-                        return string.Format("Nume: {0}, Prenume: {1}, Varsta: {2}", x.Nume, x.Prenume, x.Varsta);
-                    }
-                    ));
-            }
-
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item.FormatString(
-                    x =>
-                    {
-                        return string.Format("{0}, {1}, {2} ani", x.Nume, x.Prenume, x.Varsta);
-                    }
-                    ));
             }
         }
     }
